@@ -1,21 +1,25 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup , FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { CartService } from 'src/app/services/cart.service';
 import { User } from 'src/app/model/user';
+import { ApiService } from 'src/app/services/api.service';
+import { UserService } from 'src/app/services/user.service';
 
-@Component({
-  selector: 'app-connetion',
-  templateUrl: './connetion.component.html',
-  styleUrls: ['./connetion.component.css']
-})
+@Component(
+	{
+		selector: 'app-connetion',
+		templateUrl: './connetion.component.html',
+		styleUrls: ['./connetion.component.css']
+	})
 export class ConnetionComponent implements OnInit {
 
-  myForm : FormGroup;
+	error = null
+	myForm : FormGroup;
 
-	constructor(public cartservice : CartService , private router : Router , private formbuilder : FormBuilder) 
+	constructor(public userservice : UserService , private router : Router ,
+				private apiservice : ApiService ,  private formbuilder : FormBuilder) 
 	{  
-		let user = this.cartservice.getUser()
+		let user = this.userservice.getUser()
 		this.myForm = this.formbuilder.group(
 			{
 				password: [user.password , Validators.required],
@@ -23,14 +27,26 @@ export class ConnetionComponent implements OnInit {
 			})
 	}
 
-  ngOnInit(): void {
-  }
+	ngOnInit(): void 
+	{
+		this.getAllUsers()
+	}
 
-  onSaveCustomer(form : FormGroup)
+	onSaveUser(form : FormGroup)
 	{
 		if(form.valid)
 			{
-				this.cartservice.saveUser(new User(form.value.email , form.value.password))
+				this.userservice.saveUser(new User(form.value.email , form.value.password))
 			}
+	}
+
+	getAllUsers()
+	{
+		this.apiservice.getUsers().subscribe(
+		{
+		next : (data) => {this.apiservice.listUsers = data},
+		error : (err) => {this.error = err.message},
+		complete : () => {this.error = null}
+		})
 	}
 }

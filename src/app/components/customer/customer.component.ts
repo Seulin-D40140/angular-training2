@@ -33,10 +33,7 @@ export class CustomerComponent implements OnInit
 			})
 	}
 
-	ngOnInit(): void 
-	{  
-		
-	}
+	ngOnInit(): void {  }
 
 	/**
 	 * Méthode de validation du formulaire client en le sauvegardant dans le service
