@@ -7,8 +7,12 @@ import { CustomerComponent } from './components/customer/customer.component';
 import { OrderComponent } from './components/order/order.component';
 import { ConnetionComponent } from './components/connetion/connetion.component';
 import { AdminComponent } from './components/admin/admin.component';
+import { AdminGuard } from './components/admin.guard';
 
 const routes: Routes = [
+    { path : 'admin' , component : AdminComponent,
+      canActivate : [AdminGuard]
+    },
     { path : 'trainings', component : TrainingsComponent },
     { path : 'admin' , component : AdminComponent},
     { path : 'connection', component : ConnetionComponent},
