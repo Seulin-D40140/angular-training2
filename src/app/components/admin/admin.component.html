@@ -3,7 +3,7 @@
         <table class="table table-striped">
             <thead>
                 <tr>
-                    <th>ID</th> <th>NOM</th> <th>DESCRIPTION</th> <th>PRIX</th> <th>QUANTITE</th> <th>PANIER</th>
+                    <th>ID</th> <th>NOM</th> <th>DESCRIPTION</th> <th>PRIX</th> <th>QUANTITE</th> <th>MODIF</th>
                 </tr>         
             </thead>
             <tbody>
@@ -12,13 +12,13 @@
                     <td>{{training.name}}</td>    
                     <td>{{training.description}}</td>
                     <td>{{training.price}}</td>
-                    <td> <input name="quantity" style="width: 60px" [(ngModel)]="training.quantity" min=""> </td>
-                    <td> <a class="btn btn-primary"> Ajouter </a></td>
+                    <td>{{training.quantity}} </td>
+                    
                     <td> <a class="btn btn-secondary"> Modifier </a></td>
-                    <td> <a class="btn btn-danger"> supprimer </a></td>
-
+                    <td> <a class="btn btn-danger" (click)="this.deleteTrainings(training.id)"> supprimer </a></td>
                 </tr>
             </tbody>
+            <td> <a class="btn btn-primary"> Ajouter </a></td>
         </table>    
     </ng-container>
 </div>

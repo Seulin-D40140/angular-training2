@@ -29,4 +29,16 @@ export class AdminComponent implements OnInit {
 		complete : () => {this.error = null}
 		})
 	}
+
+  deleteTrainings(id : number)
+	{
+		this.apiservice.deleteTrainingAdmin(id).subscribe(
+		{
+      
+		next : (data) => {console.log(data)
+    console.log(id)},
+		error : (err) => {this.error = err.message},
+		complete : () => {this.error = null}
+		})
+	}
 }

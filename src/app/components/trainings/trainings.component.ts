@@ -36,6 +36,8 @@ export class TrainingsComponent implements OnInit
 		})
 	}
 
+	
+
 /**
    * Méthode permettant l'ajout d'une formation au panier en utilisant le service dédié
    * @param training 

@@ -27,5 +27,9 @@ export class ApiService {
     return this.http.get<User[]>(environment.host+"/users")
   }
 
+  public deleteTrainingAdmin(id : number)
+  {
+    return this.http.delete<Training>(environment.host+"/trainings/"+id)
+  }
   
 }

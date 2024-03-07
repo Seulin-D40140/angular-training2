@@ -4,10 +4,10 @@
             <span><i class="icon icon-user connection">connection</i></span>
         </div>
         <div class="form-group">
-            <input type="text" class="form-control item" placeholder="Email" formControlName="email" [(ngModel)]="userservice.getUser().email">
+            <input type="text" class="form-control item" placeholder="Email" formControlName="email">
         </div>
         <div class="form-group">
-            <input type="password" class="form-control item" placeholder="Password" formControlName="password" [(ngModel)]="userservice.getUser().password">
+            <input type="password" class="form-control item" placeholder="Password" formControlName="password">
         </div>
         <div class="form-group">
             <button type="submit" [disabled]="!myForm.valid" class="btn btn-block create-account">se connecter</button>
