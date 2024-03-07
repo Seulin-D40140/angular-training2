@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TrainingsComponent } from './components/trainings/trainings.component';
@@ -12,6 +11,7 @@ import { OrderComponent } from './components/order/order.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ConnetionComponent } from './components/connetion/connetion.component';
+import { AdminComponent } from './components/admin/admin.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +21,8 @@ import { ConnetionComponent } from './components/connetion/connetion.component';
     NotFoundComponent,
     CustomerComponent,
     OrderComponent,
-    ConnetionComponent
+    ConnetionComponent,
+    AdminComponent
   ],
   imports: [
     BrowserModule,

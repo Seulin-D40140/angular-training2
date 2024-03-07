@@ -6,9 +6,11 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
 import { CustomerComponent } from './components/customer/customer.component';
 import { OrderComponent } from './components/order/order.component';
 import { ConnetionComponent } from './components/connetion/connetion.component';
+import { AdminComponent } from './components/admin/admin.component';
 
 const routes: Routes = [
     { path : 'trainings', component : TrainingsComponent },
+    { path : 'admin' , component : AdminComponent},
     { path : 'connection', component : ConnetionComponent},
     { path : 'cart' , component : CartComponent },
     { path : 'order' , component : OrderComponent},

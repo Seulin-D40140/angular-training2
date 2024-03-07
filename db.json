@@ -48,7 +48,7 @@
   "users":
   [
     {
-      "email": "Nel640@hotmail.fr",
+      "email": "nel640@hotmail.fr",
       "password": "1234",
       "roles":["ADMIN","USER"]
     },

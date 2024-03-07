@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup , FormBuilder, Validators } from '@angular/forms';
+import { FormControl, FormGroup , FormBuilder, Validators, Form } from '@angular/forms';
 import { Router } from '@angular/router';
 import { User } from 'src/app/model/user';
 import { ApiService } from 'src/app/services/api.service';
@@ -27,16 +27,23 @@ export class ConnetionComponent implements OnInit {
 			})
 	}
 
-	ngOnInit(): void 
+	ngOnInit( ): void 
 	{
 		this.getAllUsers()
 	}
 
+	
+
 	onSaveUser(form : FormGroup)
 	{
+		this.userservice.verifUserExist(new User(form.value.email , form.value.password , [""]))
+		if(this.userservice.isConnected)
+		{
+			this.router.navigateByUrl('trainings');
+		}
 		if(form.valid)
 			{
-				this.userservice.saveUser(new User(form.value.email , form.value.password))
+				this.userservice.saveUser(new User(form.value.email , form.value.password , [""]))
 			}
 	}
 
