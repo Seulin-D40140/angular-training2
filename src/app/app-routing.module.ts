@@ -15,6 +15,7 @@ const routes: Routes = [
     { path : 'cart' , component : CartComponent },
     { path : 'order' , component : OrderComponent},
     { path : 'customer' , component : CustomerComponent},
+    
     { path : '' , redirectTo : 'trainings', pathMatch : 'full' },
     { path: '404', component: NotFoundComponent},
     { path: '**', redirectTo: '/404'}

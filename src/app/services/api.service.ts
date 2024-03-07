@@ -15,7 +15,6 @@ export class ApiService {
   public getTrainings()
   {
     return this.http.get<Training[]>(environment.host+"/trainings")
-
   }
 
   public getTraining( id : number)
@@ -26,7 +25,6 @@ export class ApiService {
   public getUsers()
   {
     return this.http.get<User[]>(environment.host+"/users")
-
   }
 
   

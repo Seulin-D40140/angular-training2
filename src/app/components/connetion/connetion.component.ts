@@ -11,6 +11,7 @@ import { UserService } from 'src/app/services/user.service';
 		templateUrl: './connetion.component.html',
 		styleUrls: ['./connetion.component.css']
 	})
+	
 export class ConnetionComponent implements OnInit {
 
 	error = null
@@ -42,9 +43,9 @@ export class ConnetionComponent implements OnInit {
 			this.router.navigateByUrl('trainings');
 		}
 		if(form.valid)
-			{
-				this.userservice.saveUser(new User(form.value.email , form.value.password , [""]))
-			}
+		{
+			this.userservice.saveUser(new User(form.value.email , form.value.password , [""]))
+		}
 	}
 
 	getAllUsers()

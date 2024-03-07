@@ -16,7 +16,7 @@ export class UserService {
 
 	getUser() : User
 	{
-	let user = localStorage.getItem('users');
+	let user = localStorage.getItem('user');
 	if(user)  return  JSON.parse(user);
 	return new User("","",[""]);
 	}
@@ -29,22 +29,21 @@ export class UserService {
 	verifUserExist(user : User)
 	{
 		let users = this.apiservice.listUsers
+
 		users?.forEach(u=> 
-			{	
-				if( u.email === user.email && u.password === user.password)
-				{
-					this.isConnected = true
-					u.roles.forEach(role => 
+		{	
+			if( u.email === user.email && u.password === user.password)
+			{
+				this.isConnected = true
+				u.roles.forEach(role => 
+					{
+						if(role == 'ADMIN')
 						{
-							if(role == 'ADMIN')
-							{
-								this.isAdmin = true
-							}
-						})
-				}
-			})
-			console.log(this.isAdmin)
-			console.log(this.isConnected)
+							this.isAdmin = true
+						}
+					})
+			}
+		})
 	}
 
 	deconnection()
