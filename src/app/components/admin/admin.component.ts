@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Traininadd } from 'src/app/model/traininadd.model';
 import { Training } from 'src/app/model/training.model';
 import { User } from 'src/app/model/user';
 import { ApiService } from 'src/app/services/api.service';

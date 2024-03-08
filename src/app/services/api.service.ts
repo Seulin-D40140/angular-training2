@@ -3,12 +3,14 @@ import { Injectable } from '@angular/core';
 import { Training } from '../model/training.model';
 import { environment } from 'src/environments/environment';
 import { User } from '../model/user';
+import { Traininadd } from '../model/traininadd.model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ApiService {
 
+  
   addBool = false
   listUsers : User[] | undefined;
   
@@ -34,7 +36,7 @@ export class ApiService {
     return this.http.delete<Training>(environment.host+"/trainings/"+id)
   }
 
-  public addTrainingAdmin(training : Training)
+  public addTrainingAdmin(training : Traininadd)
   {
     return this.http.post<Training>(environment.host+"/trainings" ,training)
   }

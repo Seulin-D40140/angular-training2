@@ -48,9 +48,15 @@
       "description": "initiation ruby 2jrs",
       "price": 500,
       "quantity": 1
+    },
+    {
+      "name": "c",
+      "description": "formation c 5jrs",
+      "price": "2000",
+      "quantity": 1,
+      "id": 9
     }
   ],
-  
   "users": [
     {
       "email": "nel640@hotmail.fr",

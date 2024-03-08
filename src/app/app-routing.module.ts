@@ -14,6 +14,9 @@ const routes: Routes = [
     { path : 'admin' , component : AdminComponent,
       canActivate : [AdminGuard]
     },
+    { path : 'formadm' , component : FormTrainingAdminComponent,
+      canActivate : [AdminGuard]
+    },
     { path : 'trainings', component : TrainingsComponent },
     { path : 'admin' , component : AdminComponent},
     { path : 'connection', component : ConnetionComponent},
