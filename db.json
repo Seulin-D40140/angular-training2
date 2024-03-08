@@ -16,8 +16,8 @@
     },
     {
       "id": 3,
-      "name": "pythn",
-      "description": "initiation au dev/web sur 4jrs",
+      "name": "python",
+      "description": "formation python/django sur 5jrs",
       "price": "1300",
       "quantity": 1
     },
@@ -41,8 +41,16 @@
       "description": "formation java avancé/bdd 3jrs",
       "price": "1200",
       "quantity": 1
+    },
+    {
+      "id": 8,
+      "name": "ruby",
+      "description": "initiation ruby 2jrs",
+      "price": 500,
+      "quantity": 1
     }
   ],
+  
   "users": [
     {
       "email": "nel640@hotmail.fr",

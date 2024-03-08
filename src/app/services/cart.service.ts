@@ -74,6 +74,11 @@ export class CartService {
 	else return undefined;
 	}
 
+	getcart2()
+	{
+		return this.cart
+	}
+
 	/**
    * Méthode qui calcule et renvoi le montant total du panier
    * @return total amount

@@ -12,6 +12,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ConnetionComponent } from './components/connetion/connetion.component';
 import { AdminComponent } from './components/admin/admin.component';
+import { FormTrainingAdminComponent } from './components/form-training-admin/form-training-admin.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { AdminComponent } from './components/admin/admin.component';
     CustomerComponent,
     OrderComponent,
     ConnetionComponent,
-    AdminComponent
+    AdminComponent,
+    FormTrainingAdminComponent
   ],
   imports: [
     BrowserModule,

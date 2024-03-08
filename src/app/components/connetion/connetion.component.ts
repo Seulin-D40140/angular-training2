@@ -3,6 +3,7 @@ import { FormControl, FormGroup , FormBuilder, Validators, Form } from '@angular
 import { Router } from '@angular/router';
 import { User } from 'src/app/model/user';
 import { ApiService } from 'src/app/services/api.service';
+import { CartService } from 'src/app/services/cart.service';
 import { UserService } from 'src/app/services/user.service';
 
 @Component(
@@ -18,7 +19,8 @@ export class ConnetionComponent implements OnInit {
 	myForm : FormGroup;
 
 	constructor(public userservice : UserService , private router : Router ,
-				private apiservice : ApiService ,  private formbuilder : FormBuilder) 
+				private apiservice : ApiService ,  private formbuilder : FormBuilder,
+				private cartservice : CartService) 
 	{  
 		let user = this.userservice.getUser()
 		this.myForm = this.formbuilder.group(
@@ -40,7 +42,7 @@ export class ConnetionComponent implements OnInit {
 		this.userservice.verifUserExist(new User(form.value.email , form.value.password , [""]))
 		if(this.userservice.isConnected)
 		{
-			this.router.navigateByUrl('trainings');
+			this.router.navigateByUrl(this.isCartEmpty());
 		}
 		if(form.valid)
 		{
@@ -56,5 +58,15 @@ export class ConnetionComponent implements OnInit {
 		error : (err) => {this.error = err.message},
 		complete : () => {this.error = null}
 		})
+	}
+
+	isCartEmpty()
+	{
+		let route : string = "trainings"
+		if( this.cartservice.getcart2().size > 0)
+		{
+			route = "cart"
+		}
+		return route
 	}
 }

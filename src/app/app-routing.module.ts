@@ -8,6 +8,7 @@ import { OrderComponent } from './components/order/order.component';
 import { ConnetionComponent } from './components/connetion/connetion.component';
 import { AdminComponent } from './components/admin/admin.component';
 import { AdminGuard } from './components/admin.guard';
+import { FormTrainingAdminComponent } from './components/form-training-admin/form-training-admin.component';
 
 const routes: Routes = [
     { path : 'admin' , component : AdminComponent,
@@ -19,6 +20,7 @@ const routes: Routes = [
     { path : 'cart' , component : CartComponent },
     { path : 'order' , component : OrderComponent},
     { path : 'customer' , component : CustomerComponent},
+    { path : 'formadm' , component : FormTrainingAdminComponent},
     
     { path : '' , redirectTo : 'trainings', pathMatch : 'full' },
     { path: '404', component: NotFoundComponent},

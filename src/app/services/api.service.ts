@@ -8,6 +8,8 @@ import { User } from '../model/user';
   providedIn: 'root'
 })
 export class ApiService {
+
+  addBool = false
   listUsers : User[] | undefined;
   
   constructor(private http:HttpClient) { }
@@ -30,6 +32,16 @@ export class ApiService {
   public deleteTrainingAdmin(id : number)
   {
     return this.http.delete<Training>(environment.host+"/trainings/"+id)
+  }
+
+  public addTrainingAdmin(training : Training)
+  {
+    return this.http.post<Training>(environment.host+"/trainings" ,training)
+  }
+
+  public modifTrainingAdmin()
+  {
+
   }
   
 }
