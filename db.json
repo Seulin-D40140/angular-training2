@@ -50,11 +50,25 @@
       "quantity": 1
     },
     {
-      "name": "c",
-      "description": "formation c 5jrs",
-      "price": "2000",
+      "id": 9,
+      "name": "c#",
+      "description": "initiation c-sharpe 5jrs",
+      "price": 2000,
+      "quantity": 1
+    },
+    {
+      "name": "c++",
+      "description": "inititation c++ 10jrs",
+      "price": "5000",
       "quantity": 1,
-      "id": 9
+      "id": 10
+    },
+    {
+      "id": 11,
+      "name": "go ",
+      "description": "test modification",
+      "price": "101",
+      "quantity": 1
     }
   ],
   "users": [

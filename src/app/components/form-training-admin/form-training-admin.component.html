@@ -1,7 +1,7 @@
 <div *ngIf="apiservise.addBool" class="registration-form">
     <form [formGroup]="myForm" >
         <div class="form-icon">
-            <span><i class="register">ajout</i></span>
+            <span><i class="register">ajouter</i></span>
         </div>
         <div class="form-group">
             <input type="text" class="form-control item" id="name" placeholder="nom" formControlName="name">
@@ -22,12 +22,9 @@
 </div>
 
 <div *ngIf="!apiservise.addBool" class="registration-form">
-    <form >
+    <form [formGroup]="myForm">
         <div class="form-icon">
-            <span><i class="register">modification</i></span>
-        </div>
-        <div class="form-group">
-            <input type="text" class="form-control item" id="id" formControlName="id">
+            <span><i class="register">modifier</i></span>
         </div>
         <div class="form-group">
             <input type="text" class="form-control item" id="name" formControlName="name">
@@ -39,10 +36,7 @@
             <input type="text" class="form-control item" id="price" formControlName="price">
         </div>
         <div class="form-group">
-            <input type="text" class="form-control item" id="quantity" formControlName="quantity">
-        </div>
-        <div class="form-group">
-            <button type="submit"  class="btn btn-block create-account" (click)="modifTrainigAdm()">modifier</button>
+            <button type="submit"  class="btn btn-block create-account" (click)="modifTrainigAdm(myForm)">modifier</button>
         </div>
     </form>
     <div class="social-media">

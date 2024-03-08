@@ -14,22 +14,27 @@ import { Traininadd } from 'src/app/model/traininadd.model'
 	export class FormTrainingAdminComponent implements OnInit {
 
 	training : Traininadd = new Traininadd ("" , "" , "" , 1)
+	
+
 	myForm : FormGroup;
 	error = null
 
 	constructor(public apiservise : ApiService , private router : Router , 
 				private cartservice : CartService ,  private formbuilder : FormBuilder) 
 	{ 
-		this.myForm = this.formbuilder.group(
+			this.myForm = this.formbuilder.group(
 			{
 				name: [this.training.name],
 				description: [this.training.description],
 				price: [this.training.price ],
 				quantity: [this.training.quantity]
 			})
+			this.ifmodiftraining()
 	}
 
 	ngOnInit(): void {
+		
+		
 	}
 
 	addTrainigAdm(form : FormGroup)
@@ -44,30 +49,34 @@ import { Traininadd } from 'src/app/model/traininadd.model'
 					complete : () => {this.error = null}
 				})
 		}
+		this.apiservise.addBool = false
 		this.router.navigateByUrl('admin')
 	}
 
-	// addTraining(training : Traininadd)
-	// {
-	// 	this.apiservise.addTrainingAdmin(training).subscribe(
-	// 		{
-	// 			next : () => {},
-	// 			error : (err) => {this.error = err.message},
-	// 			complete : () => {this.error = null}
-	// 		})
-	// }
-
-	modifTrainigAdm()
+	modifTrainigAdm(form : FormGroup)
 	{
-	this.router.navigateByUrl('admin')
+			this.apiservise.modifTrainingAdmin(this.apiservise.trainingmodif.id , 
+							new Training(this.apiservise.trainingmodif.id , form.value.name , form.value.description , form.value.price , 1)).subscribe(
+				{
+					next : () => {},
+					error : (err) => {this.error = err.message},
+					complete : () => {this.error = null}
+				})
+		
+		this.router.navigateByUrl('admin')
 	}
-  // onSaveCustomer(form : FormGroup)
-	// {
-	// 	if(form.valid)
-	// 		{
-	// 			this.cartService.saveCustomer(new Customer(form.value.name , form.value.firstName , 
-	// 								form.value.address , form.value.phone , form.value.email))
-	// 		}
-	// 	this.router.navigateByUrl('order');
-	// }
+
+	ifmodiftraining()
+	{
+		if(!this.apiservise.addBool)
+		{
+			this.myForm = this.formbuilder.group(
+				{
+					name: [this.apiservise.trainingmodif.name],
+					description: [this.apiservise.trainingmodif.description],
+					price: [this.apiservise.trainingmodif.price ],
+					quantity: [this.apiservise.trainingmodif.quantity]
+				})
+		}
+	}
 }

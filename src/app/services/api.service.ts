@@ -10,7 +10,7 @@ import { Traininadd } from '../model/traininadd.model';
 })
 export class ApiService {
 
-  
+  trainingmodif : Training = new Training ( 0 ,"" , "" , 0 , 1)
   addBool = false
   listUsers : User[] | undefined;
   
@@ -41,9 +41,9 @@ export class ApiService {
     return this.http.post<Training>(environment.host+"/trainings" ,training)
   }
 
-  public modifTrainingAdmin()
+  public modifTrainingAdmin(id : number , training : Training)
   {
-
+    return this.http.put<Training>(environment.host+"/trainings/"+id , training)
   }
   
 }

@@ -14,7 +14,7 @@
                     <td>{{training.price}}</td>
                     <td>{{training.quantity}} </td>
                     
-                    <td> <a class="btn btn-secondary" routerLink="/formadm"> Modifier </a></td>
+                    <td> <a class="btn btn-secondary" routerLink="/formadm" (click)="recupIdTraining(training)"> Modifier </a></td>
                     <td> <a class="btn btn-danger" (click)="this.deleteTrainings(training.id)"> supprimer </a></td>
                 </tr>
             </tbody>

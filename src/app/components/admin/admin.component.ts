@@ -51,13 +51,8 @@ export class AdminComponent implements OnInit
 		this.apiservice.addBool = true
 	}
 
-	// addTraining()
-	// {
-	// 	this.apiservice.addTrainingAdmin(training : Training).subscribe(
-	// 	{
-	// 		next : (data) => {this.getAllTrainingsAdmin()},
-	// 		error : (err) => {this.error = err.message},
-	// 		complete : () => {this.error = null}
-	// 	})
-	// }
+	recupIdTraining(training : Training)
+	{
+		this.apiservice.trainingmodif = training
+	}
 }
