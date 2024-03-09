@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { UserService } from './services/user.service';
+import { ApiService } from './services/api.service';
 
 @Component({
   selector: 'app-root',
@@ -8,6 +9,11 @@ import { UserService } from './services/user.service';
 })
 export class AppComponent {
 
-  constructor(public usersevice : UserService) {  }
+  constructor(public usersevice : UserService , private apiservice : ApiService) {  }
   title = 'trainings-front-app';
+
+  resetAddBool()
+	{
+	  this.apiservice.addBool = false
+	}
 }
